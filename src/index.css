@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Thorensic Log Analyzer dark theme - bgCanvas: #0D1117 */
+    --background: 210 24% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 25% 11%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 25% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary: cyan/blue 500-600 */
+    --primary: 191 100% 50%;
+    --primary-foreground: 210 24% 8%;
+
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    /* Muted: slate 400-500 */
+    --muted: 215 16% 47%;
+    --muted-foreground: 215 16% 65%;
+
+    /* Accent: emerald 500 */
+    --accent: 158 64% 52%;
+    --accent-foreground: 210 24% 8%;
+
+    /* Warning: amber 500 */
+    --warning: 43 96% 56%;
+    --warning-foreground: 210 24% 8%;
+
+    /* Danger: rose 500 */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 215 20% 25%;
+    --input: 215 18% 20%;
+    --ring: 191 100% 50%;
+
+    --radius: 1rem; /* rounded-2xl = 1rem */
+
+    --transition-smooth: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 210 24% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 8%;
+
+    --primary: 191 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 24% 8%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --warning: 43 96% 56%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 96%;
+    --ring: 191 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Tabular numbers for metrics */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Terminal/monospace for technical data */
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Glow effects for cybersecurity aesthetic */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3);
+  }
+
+  .glow-safe {
+    box-shadow: 0 0 20px hsl(var(--glow-safe) / 0.3);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 20px hsl(var(--glow-danger) / 0.3);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
